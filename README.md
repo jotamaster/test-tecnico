@@ -47,6 +47,51 @@ npm install
 ```
 cp .env.example .env
 ```
+
+
+## Backend 
+
+### Técnologias:
+
+1. NuxtJS: para el lado del fronte escogí NuxtJS  que es un framework basado en VueJS. Nuxt esta inspirado de NextJS que es un framework que tiene el mismo o similar proposito  y que esta basado en ReactJS. Y que facilian la creacion de aplicaciones SSR.
+
+### Lista de dependencias:
+
+1. 
+
+### Lista de dependencias de desarrollo:
+
+
+
+## Instalación:
+### Primer paso es clonar el proyecto( si ya se clonó omitir este paso)
+```
+git clone https://github.com/jotamaster/test-tecnico.git
+```
+
+### Ubícate en la carpeta de frontend e instala las dependencias 
+```
+npm install
+```
+
+### Copia el archivo .env.example y nombralo .env  y configura las variables de entorno
+```
+cp .env.example .env
+```
+
+### Arrancar aplicacion
+Modo develop
+```
+npm run dev
+```
+Modo producción (genera una carpeta build)
+```
+npm run build
+```
+Una vez la aplicacion construida se puede usar el comando `start` oara ver una versuib de versión de producción de la aplicación.
+```
+npm run start
+```
  
 
 
