@@ -1,4 +1,5 @@
 import Car from '../models/Car';
+import slugify from 'slugify';
 
 export const findAllCars = async( req, res )=>{
     const cars = await Car.find();
@@ -6,11 +7,18 @@ export const findAllCars = async( req, res )=>{
 }
 
 export const storeCar = async (req, res) => {
+
+    let rawSlug = `${req.body.owner} ${req.body.brand} ${req.body.model} ${req.body.year}`;
+    const slug = slugify(rawSlug.toLowerCase());
     const newCar = new Car ({
-        title: req.body.title,
+        description: req.body.description,
         owner: req.body.owner,
         brand: req.body.brand,
-        year: req.body.year
+        year: req.body.year,
+        images: req.body.images,
+        slug,
+        model: req.body.model,
+        carClass: req.body.carClass,
     });
     const  carSaved = await newCar.save();
     res.json(carSaved);

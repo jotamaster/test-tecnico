@@ -7,7 +7,7 @@ POST  http://localhost:3400/api/cars
 Content-Type: application/json
 
 {
-    "title":"auto semi nuevo bien cuidado",
+    "description":"auto semi nuevo bien cuidado",
     "owner":"Jorge Bustamante",
     "brand": "Changan",
     "year":"2015",

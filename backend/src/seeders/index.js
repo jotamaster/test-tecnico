@@ -1,8 +1,9 @@
 import Car from '../models/Car';
+import slugify from 'slugify';
 
 const fakeCars = [
     {
-        "title":"Vehiculo confortable",
+        "description":"Vehiculo confortable",
         "owner":"Jorge Bustamante",
         "brand": "Changan",
         "year":"2015",
@@ -14,7 +15,7 @@ const fakeCars = [
         ]
     },
     {
-        "title":"Jeep semi nuevo bien cuidado",
+        "description":"Jeep semi nuevo bien cuidado",
         "owner":"Hernan Cardenas",
         "brand": "Changan",
         "year":"2015",
@@ -26,7 +27,7 @@ const fakeCars = [
         ]
     },
     {
-        "title":"Camioneta semi nueva cuidado",
+        "description":"Camioneta semi nueva cuidado",
         "owner":"Luis Castro",
         "brand": "Changan",
         "year":"2016",
@@ -38,7 +39,7 @@ const fakeCars = [
         ]
     },
     {
-        "title":"Jeep Vitara semi nueva cuidado",
+        "description":"Jeep Vitara semi nueva cuidado",
         "owner":"Nicolas Alegria",
         "brand": "Suzuki",
         "year":"2016",
@@ -50,7 +51,7 @@ const fakeCars = [
         ]
     },
     {
-        "title":"auto DZIRE semi nueva cuidado",
+        "description":"auto DZIRE semi nueva cuidado",
         "owner":"Matias Aburto",
         "brand": "Suzuki",
         "year":"2019",
@@ -62,7 +63,7 @@ const fakeCars = [
         ]
     },
     {
-        "title":"Mazda lujoso y bien cuidado",
+        "description":"Mazda lujoso y bien cuidado",
         "owner":"Felipe Andrade",
         "brand": "Mazda",
         "year":"2018",
@@ -74,7 +75,7 @@ const fakeCars = [
         ]
     },
     {
-        "title":"Camioneta mazda BT-50",
+        "description":"Camioneta mazda BT-50",
         "owner":"Marcelo Hernandez",
         "brand": "Mazda",
         "year":"2018",
@@ -86,7 +87,7 @@ const fakeCars = [
         ]
     },
     {
-        "title":"Excelente y confiable vehiculo",
+        "description":"Excelente y confiable vehiculo",
         "owner":"Nicolas Rubilar",
         "brand": "Renault",
         "year":"2017",
@@ -98,7 +99,7 @@ const fakeCars = [
         ]
     },
     {
-        "title":"Excelente y confiable vehiculo",
+        "description":"Excelente y confiable vehiculo",
         "owner":"Felipe Mancilla",
         "brand": "Renault",
         "year":"2016",
@@ -114,6 +115,9 @@ const fakeCars = [
 export const carSeeder =  async (req, res) => {
     fakeCars.map( (car) => {
         
+        let rawSlug = `${car.owner} ${car.brand} ${car.model} ${car.year}`;
+        const slug = slugify(rawSlug.toLowerCase());
+        car['slug'] = slug;
         let  newCar = new Car (car);
         newCar.save();
     })

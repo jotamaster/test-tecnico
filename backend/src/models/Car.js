@@ -2,7 +2,7 @@ import {Schema,model} from 'mongoose';
 
 
 const carSchema = new Schema({
-    title:{
+    description:{
         type: String,
         required:true,
         trim:true
@@ -28,6 +28,11 @@ const carSchema = new Schema({
         trim:true
     },
     model:{
+        type: String,
+        required:true,
+        trim:true
+    },
+    slug:{
         type: String,
         required:true,
         trim:true
