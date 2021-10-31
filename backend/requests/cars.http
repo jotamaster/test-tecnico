@@ -2,3 +2,20 @@
 
 ###
 GET  http://localhost:3400/api/cars
+###
+POST  http://localhost:3400/api/cars
+Content-Type: application/json
+
+{
+    "title":"auto semi nuevo bien cuidado",
+    "owner":"jorge Bustamante",
+    "brand": "Mazda",
+    "year":"2015",
+    "images": ["hola","chao"]
+}
+
+###
+GET  http://localhost:3200/api/cars/617b4ddf539be6e0d54fb99f
+
+###
+DELETE   http://localhost:3200/api/cars/617b4f1d507cdb89d75fc2ac
