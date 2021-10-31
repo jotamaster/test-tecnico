@@ -22,5 +22,9 @@ Content-Type: application/json
 ###
 GET  http://localhost:3400/api/cars/617b4dc238dd1a6884547b0a
 
+
+###
+GET  http://localhost:3400/api/cars/slug/jorge-bustamante-changan-new-alsvin-2015
+
 ###
 DELETE   http://localhost:3400/api/cars/617b4dc238dd1a6884547b0a

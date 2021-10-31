@@ -7,6 +7,13 @@
     "_name": "_6285ddd6"
   },
   {
+    "name": "car-slug",
+    "path": "/car/:slug?",
+    "component": "C:\\\\projects\\\\prueba\\\\test-tecnico\\\\frontend\\\\pages\\\\car\\\\_slug.vue",
+    "chunkName": "pages/car/_slug",
+    "_name": "_397b196a"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "C:\\\\projects\\\\prueba\\\\test-tecnico\\\\frontend\\\\pages\\\\index.vue",

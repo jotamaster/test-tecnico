@@ -23,12 +23,8 @@
     </v-card-text>
 
     <v-card-actions>
-      <v-btn
-        color="orange"
-        text
-      >
-        Ver más
-      </v-btn>
+      <nuxt-link color="orange"
+        text :to="`/car/${car.slug}`">Ver mas</nuxt-link>
     </v-card-actions>
   </v-card>
 </template>

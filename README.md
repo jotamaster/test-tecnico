@@ -89,11 +89,11 @@ Modo develop
 ```
 npm run dev
 ```
-Modo producción (genera una carpeta build)
+Modo producción (genera una carpeta dist)
 ```
 npm run build
 ```
-Una vez la aplicacion construida se puede usar el comando `start` oara ver una versuib de versión de producción de la aplicación.
+Una vez la aplicacion construida se puede usar el comando `start` podra ver una  versión de producción de la aplicación.
 ```
 npm run start
 ```

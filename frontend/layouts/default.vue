@@ -9,7 +9,8 @@
     <v-app-bar app>
       <!-- <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon> -->
 
-      <v-toolbar-title>Cars</v-toolbar-title>
+      <v-toolbar-title v-if="ifIndex" >Cars</v-toolbar-title>
+      <nuxt-link v-else to="/">  Volver al Inicio</nuxt-link>
     </v-app-bar>
 
     <v-main>
@@ -28,6 +29,12 @@
 
           }
         ]
+      }
+    },
+    computed:{
+      ifIndex() {
+        if(this.$route.name == 'index') return true
+        return false
       }
     },
   }
