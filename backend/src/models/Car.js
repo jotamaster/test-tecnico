@@ -22,6 +22,16 @@ const carSchema = new Schema({
         required:true,
         trim:true
     },
+    carClass:{
+        type: String,
+        required:true,
+        trim:true
+    },
+    model:{
+        type: String,
+        required:true,
+        trim:true
+    },
     images:{
         type:[String],
         required:true,

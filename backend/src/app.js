@@ -2,6 +2,7 @@ import express from 'express';
 import config from './config';
 
 import CarsRoutes from './routes/cars.routes';
+import SeederRoutes from './routes/seeder.routes';
 
 
 const app = express();
@@ -18,5 +19,6 @@ app.get('/',(req, res )=>{
 });
 
 app.use('/api/cars',CarsRoutes);
+app.use('/api/seeders',SeederRoutes);
 
 export default app;

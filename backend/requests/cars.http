@@ -8,14 +8,19 @@ Content-Type: application/json
 
 {
     "title":"auto semi nuevo bien cuidado",
-    "owner":"jorge Bustamante",
-    "brand": "Mazda",
+    "owner":"Jorge Bustamante",
+    "brand": "Changan",
     "year":"2015",
-    "images": ["hola","chao"]
+    "carClass":"sedan",
+    "model": "NEW ALSVIN",
+    "images": [
+        "https://derco-pe-prod.s3.amazonaws.com/images/carcontent/2021-05-06%2012%3A56%3A35-exterior_2-min.jpg",
+        "https://derco-pe-prod.s3.amazonaws.com/images/carcontent/2021-05-06%2012%3A58%3A19-exterior_4-min.jpg"
+    ]
 }
 
 ###
-GET  http://localhost:3200/api/cars/617b4ddf539be6e0d54fb99f
+GET  http://localhost:3400/api/cars/617b4dc238dd1a6884547b0a
 
 ###
-DELETE   http://localhost:3200/api/cars/617b4f1d507cdb89d75fc2ac
+DELETE   http://localhost:3400/api/cars/617b4dc238dd1a6884547b0a

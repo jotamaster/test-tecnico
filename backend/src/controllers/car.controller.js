@@ -10,8 +10,7 @@ export const storeCar = async (req, res) => {
         title: req.body.title,
         owner: req.body.owner,
         brand: req.body.brand,
-        year: req.body.year,
-        images: req.body.images
+        year: req.body.year
     });
     const  carSaved = await newCar.save();
     res.json(carSaved);
