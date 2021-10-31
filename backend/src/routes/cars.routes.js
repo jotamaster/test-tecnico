@@ -10,6 +10,8 @@ router.get('/', CarController.findAllCars);
 
 router.get('/:id', CarController.findOneCar);
 
+router.get('/slug/:slug', CarController.findOneCarBySlug);
+
 router.post('/', CarController.storeCar );
 
 router.delete('/:id', CarController.deleteCar);

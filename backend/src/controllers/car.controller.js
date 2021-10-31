@@ -27,6 +27,11 @@ export const storeCar = async (req, res) => {
 export const findOneCar = async (req, res) => {
     const car = await  Car.findById(req.params.id);
     res.json(car);
+}
+
+export const findOneCarBySlug = async (req, res) => {
+    const car = await  Car.findOne({slug: req.params.slug});
+    res.json(car);
 } 
 
 
