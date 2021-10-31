@@ -47,6 +47,11 @@ npm install
 ```
 cp .env.example .env
 ```
+### Arrancar aplicacion
+Modo develop
+```
+npm start
+```
 
 
 ## Backend 

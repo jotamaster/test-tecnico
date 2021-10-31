@@ -1,5 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
-
+const baseUrlAxios = process.env.API_BASE_URL;
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -17,6 +17,9 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
+  },
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -43,13 +46,15 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: baseUrlAxios
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,

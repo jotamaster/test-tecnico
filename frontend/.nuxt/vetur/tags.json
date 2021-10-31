@@ -1,4 +1,7 @@
 {
+  "CardCar": {
+    "description": "Auto imported from components/CardCar.vue"
+  },
   "NuxtLogo": {
     "description": "Auto imported from components/NuxtLogo.vue"
   },
