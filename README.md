@@ -15,13 +15,14 @@ El repositorio cuenta con una carpeta para el backend y otra para el frontend, c
 ### Técnologias:
 
 1. Lenguaje de programación JS usando NodeJS v16.10.0
-2. Base de datos no relacional MongoDB 7.24.0
+2. Base de datos no relacional MongoDB 7.24.0.
+3. controlador de versiones git 2.29.2
 
 ### Lista de dependencias:
 
-1. express
-2. mongoose
-3. dot-env
+1. express ^4.17.1
+2. mongoose 5.03
+3. dot-env ^10.0.0
 
 ### Lista de dependencias de desarrollo:
 

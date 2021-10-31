@@ -5,6 +5,7 @@ config();
 
 export default {
 
+    mongodbURL: process.env.MONGODB_URI,
     appPort: process.env.PORT
-    
+
 }
