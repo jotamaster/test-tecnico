@@ -12,7 +12,7 @@ El repositorio cuenta con una carpeta para el backend y otra para el frontend, c
 
 # Backend 
 
-### Tecnologías:
+## Tecnologías:
 
 1. Lenguaje de programación JS usando NodeJS v16.10.0
 2. Base de datos no relacional MongoDB 7.24.0.
@@ -63,21 +63,22 @@ Modo develop
 npm start
 ```
 
-### Arrancar los test 
+### Ejecutar los tests 
 ```
 npm run test
 ```
 
-## Descripción de ENPOINTS
-## Cars
+## Descripción de ENDPOINTS
+### Cars
+<hr>
 
-GET:  /api/cars lista todos los autos.
+GET:  "/api/cars", lista todos los autos.
 
-GET:  /api/cars/:id retorna un auto filtrando por su ID.
+GET:  "/api/cars/:id", retorna un auto filtrando por su ID.
 
-GET:  /api/cars/slug/:slug devuelve un auto filtrando por su slug.
+GET:  "/api/cars/slug/:slug", devuelve un auto filtrando por su slug.
 
-POST:  /api/cars guarda un auto, ejemplo del objeto que recibe como parametro en el body:
+POST:  "/api/cars", guarda un auto. Ejemplo del objeto que recibe como parámetro en el body:
 
 ```
 {
@@ -94,7 +95,7 @@ POST:  /api/cars guarda un auto, ejemplo del objeto que recibe como parametro en
 }
 ```
 
-POST:  /api/cars/filters retorna un listado de vehiculos que cumplan con el filtro de busqueda. ejemplo del objeto que recibe como parametro en el req.body:
+POST: "/api/cars/filters", retorna un listado de vehículos que cumplan con el filtro de búsqueda. Ejemplo del objeto que recibe como parámetro en el req.body:
 ```
 { 
     "brands":[ "Renault" , "Mazda"],
@@ -103,19 +104,21 @@ POST:  /api/cars/filters retorna un listado de vehiculos que cumplan con el filt
 }
 ```
 
-DELETE:  /api/cars/:id elimina un auto seleccionado por su ID.
+DELETE: "/api/cars/:id", elimina un auto seleccionado por su ID.
 
-## AUTH
+### AUTH
+<hr>
 
-POST:  /api/auth/register permite registrar un usuario en la base de datos solicitando, nombre email y contraseña.
+POST: "/api/auth/register", permite registrar un usuario en la base de datos solicitando nombre email y contraseña.
 
-POST:  /api/auth/login solicita usuario y contraseña  para devolver un objeto con token y nombre del usuario.
+POST: "/api/auth/login", solicita usuario y contraseña  para devolver un objeto con token y nombre del usuario.
 
-## Seeders: Implemente una ruta con seeders para poblar la base de datos para hacer pruebas y probar las funcionalidades de la aplicación
+### Seeders: Implementé rutas con seeders para poblar la base de datos y así poder ejecutar pruebas y probar las funcionalidades de la aplicación.
+<hr>
 
-GET:  /api/seeders/cars agrega vehiculos a la base de datos.
+GET: "/api/seeders/cars", agrega vehículos a la base de datos.
 
-GET:  /api/seeders/user crea un usuario de pruebas.
+GET: "/api/seeders/user", crea un usuario de pruebas.
 
 ```
 {
@@ -128,9 +131,9 @@ GET:  /api/seeders/user crea un usuario de pruebas.
 
 #  Frontend 
 
-### Técnologias:
+## Técnologias:
 
-1. NuxtJS: para el lado del fronte escogí NuxtJS  que es un framework basado en VueJS. Nuxt esta inspirado de NextJS que es un framework que tiene el mismo o similar proposito  y que esta basado en ReactJS. Y que facilian la creacion de aplicaciones SSR.
+1. <b>NuxtJS</b> <br> para el lado del frontend  escogí NuxtJS  que es un framework basado en VueJS. Nuxt esta inspirado de NextJS, que tiene similar propósito y está basado en ReactJS. Y que facilian la creación de aplicaciones SSR.
 
 ### Lista de dependencias:
 
@@ -151,7 +154,7 @@ GET:  /api/seeders/user crea un usuario de pruebas.
 
 
 ## Instalación:
-### Primer paso: clonar el proyecto( si ya se clonó omitir este paso)
+### Primer paso: clonar el proyecto ( si ya se clonó omitir este paso)
 ```
 git clone https://github.com/jotamaster/test-tecnico.git
 ```
@@ -161,12 +164,12 @@ git clone https://github.com/jotamaster/test-tecnico.git
 npm install
 ```
 
-### Copia el archivo .env.example y nombralo .env  y configura las variables de entorno
+### Copia el archivo .env.example, nómbralo .env y configura las variables de entorno
 ```
 cp .env.example .env
 ```
 #### Descripción de variables de entorno:
-1. API_BASE_URL=http://localhost:3400 : Esta variable indica la url base que tendrá la api rest y que usara axios para hacer las consultas. 
+1. API_BASE_URL=http://localhost:3400 : Esta variable indica la url base que tendrá la api rest y que usará axios para hacer las consultas. 
 
 ### Arrancar aplicación
 Modo develop
@@ -177,7 +180,7 @@ Modo producción (genera una carpeta dist)
 ```
 npm run build
 ```
-Una vez la aplicación construida se puede usar el comando `start` podra ver una  versión de producción de la aplicación.
+Una vez la aplicación construida se puede usar el comando `start` y podrá ver una versión de producción de la aplicación.
 ```
 npm run start
 ```
