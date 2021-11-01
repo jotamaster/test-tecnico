@@ -64,6 +64,16 @@ export default {
       return carClasses;
     }
   },
+  mounted() {
+
+  },
+  watch:{
+    allCars: function (val){
+      if(val){
+        this.validateRecomentionData();
+      }
+    }
+  },
   methods: {
     getCarsWithFilter(carClasses, brands, years){
       let data = {
@@ -79,9 +89,29 @@ export default {
     getAllCars(){
       this.currentCars = this.allCars;
     },
+    validateRecomentionData(){
+      if(process.client) {
+        const data = JSON.parse(localStorage.getItem('recomendationData'))
+        if(data){
+          let brand = Object.entries(data.brands).sort((a,b) => b[1]-a[1])[0][0]
+          let carClass = Object.entries(data.carClasses).sort((a,b) => b[1]-a[1])[0][0]
+          let cars = [];
+          this.allCars.map( (car) => {
+            if( car.carClass == carClass){
+               cars.unshift(car)
+            }else{
+              cars.push(car)
+            }
+          })
+           this.currentCars = cars;
+          console.log(carClass)
+        }else{
+          console.log('sin data');
+        }
+      }
+    }
   },
   async fetch() {
-
     try{
       const cars = await this.$axios.$get('/api/cars');
       this.currentCars = cars;
@@ -91,7 +121,6 @@ export default {
       console.log("error al reliazar la peticion al servidor");
       console.log(error);
     }
-
   }
 
 }

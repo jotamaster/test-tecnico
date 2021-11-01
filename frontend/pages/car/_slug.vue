@@ -64,7 +64,50 @@ export default {
     }
 
   },
-  mounted () {
+  computed:{
+    getCar(){
+      return this.car
+    }
+  },watch:{
+    car: function(val){
+      if(val){
+        this.saveRecomendationData()
+      }
+    }
+  },
+  methods: {
+    saveRecomendationData(){
+      if(process.client ){
+
+        if(localStorage.recomendationData){
+          let data = JSON.parse(localStorage.recomendationData)
+          if (data.carClasses[`${this.car.carClass}`]) {
+            data.carClasses[`${this.car.carClass}`] = data.carClasses[`${this.car.carClass}`] + 1;
+          }else{
+            data.carClasses[`${this.car.carClass}`] = 1;
+          }
+
+          if (data.brands[`${this.car.brand}`]) {
+            data.brands[`${this.car.brand}`] = data.brands[`${this.car.brand}`] + 1;
+          }else{
+            data.brands[`${this.car.brand}`] = 1;
+          }
+
+          localStorage.setItem('recomendationData', JSON.stringify(data));
+        }else{
+          let data = {
+            brands:{},
+            carClasses:{}
+          };
+          data.carClasses[`${this.car.carClass}`] = 1;
+          data.brands[`${this.car.brand}`] = 1;
+
+          localStorage.setItem('recomendationData', JSON.stringify(data));
+        }
+      }
+    }
+  },
+  created () {
 
   }
 }
