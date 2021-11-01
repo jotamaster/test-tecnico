@@ -11,3 +11,4 @@ You can directly use them in pages and other components without the need to impo
 - `<Search>` | `<search>` (components/Search.vue)
 - `<Tutorial>` | `<tutorial>` (components/Tutorial.vue)
 - `<VuetifyLogo>` | `<vuetify-logo>` (components/VuetifyLogo.vue)
+- `<AuthLogin>` | `<auth-login>` (components/Auth/Login/index.vue)

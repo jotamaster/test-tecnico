@@ -13,5 +13,8 @@
   },
   "VuetifyLogo": {
     "description": "Auto imported from components/VuetifyLogo.vue"
+  },
+  "AuthLogin": {
+    "description": "Auto imported from components/Auth/Login/index.vue"
   }
 }

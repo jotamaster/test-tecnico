@@ -4,7 +4,9 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
+const _fd96da1c = () => interopDefault(import('..\\pages\\dashboard\\index.vue' /* webpackChunkName: "pages/dashboard/index" */))
 const _6285ddd6 = () => interopDefault(import('..\\pages\\inspire.vue' /* webpackChunkName: "pages/inspire" */))
+const _e002d286 = () => interopDefault(import('..\\pages\\auth\\login.vue' /* webpackChunkName: "pages/auth/login" */))
 const _397b196a = () => interopDefault(import('..\\pages\\car\\_slug.vue' /* webpackChunkName: "pages/car/_slug" */))
 const _4a8ee0ce = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
@@ -20,9 +22,17 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
+    path: "/dashboard",
+    component: _fd96da1c,
+    name: "dashboard"
+  }, {
     path: "/inspire",
     component: _6285ddd6,
     name: "inspire"
+  }, {
+    path: "/auth/login",
+    component: _e002d286,
+    name: "auth-login"
   }, {
     path: "/car/:slug?",
     component: _397b196a,

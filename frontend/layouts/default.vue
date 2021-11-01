@@ -1,13 +1,59 @@
 <template>
-  <v-app id="inspire">
-    <!-- <v-navigation-drawer
+  <v-app :key="componentKey" id="inspire">
+    <v-navigation-drawer
+    v-if="isLogged"
       v-model="drawer"
       app
     >
-    </v-navigation-drawer> -->
+
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title class="text-h6">
+            Cars Manager
+          </v-list-item-title>
+          <v-list-item-subtitle>
+          </v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-divider></v-divider>
+
+      <v-list
+        dense
+        nav
+      >
+        <v-list-item
+          link
+        >
+          <v-list-item-icon>
+            <v-icon>{{ 'mdi-view-dashboard'}}</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>
+              <nuxt-link to="/dashboard">Dashboard</nuxt-link>
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item
+          link
+        >
+          <v-list-item-icon>
+            <v-icon>{{ 'mdi-view-sing-out'}}</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title @click="logout">
+              Salir
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+
+    </v-navigation-drawer>
 
     <v-app-bar app>
-      <!-- <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon> -->
+      <v-app-bar-nav-icon v-if="isLogged" @click="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title v-if="ifIndex" >Cars</v-toolbar-title>
       <nuxt-link v-else to="/">  Volver al Inicio</nuxt-link>
@@ -24,6 +70,7 @@
     data() {
       return {
         drawer: false,
+        componentKey:1,
         cars:[
           {
 
@@ -35,6 +82,25 @@
       ifIndex() {
         if(this.$route.name == 'index') return true
         return false
+      },
+      isLogged(){
+        return this.$store.getters['isAuthenticated']
+      }
+    },
+    methods: {
+      logout(){
+        console.log('que pasa')
+        localStorage.removeItem('user')
+        this.$store.commit('set_user',null)
+        location.reload()
+      }
+    },
+    mounted() {
+      if(process.client){
+        if(localStorage.user){
+          this.$store.commit('set_user',JSON.parse(localStorage.user))
+
+        }
       }
     },
   }

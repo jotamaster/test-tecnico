@@ -1,20 +1,37 @@
 [
   {
+    "name": "dashboard",
+    "path": "/dashboard",
+    "component": "C:\\\\projects\\\\prueba\\\\test-tecnico\\\\frontend\\\\pages\\\\dashboard\\\\index.vue",
+    "chunkName": "pages/dashboard/index",
+    "_name": "_fd96da1c"
+  },
+  {
     "name": "inspire",
     "path": "/inspire",
     "component": "C:\\\\projects\\\\prueba\\\\test-tecnico\\\\frontend\\\\pages\\\\inspire.vue",
-    "chunkName": "pages/inspire"
+    "chunkName": "pages/inspire",
+    "_name": "_6285ddd6"
+  },
+  {
+    "name": "auth-login",
+    "path": "/auth/login",
+    "component": "C:\\\\projects\\\\prueba\\\\test-tecnico\\\\frontend\\\\pages\\\\auth\\\\login.vue",
+    "chunkName": "pages/auth/login",
+    "_name": "_e002d286"
   },
   {
     "name": "car-slug",
     "path": "/car/:slug?",
     "component": "C:\\\\projects\\\\prueba\\\\test-tecnico\\\\frontend\\\\pages\\\\car\\\\_slug.vue",
-    "chunkName": "pages/car/_slug"
+    "chunkName": "pages/car/_slug",
+    "_name": "_397b196a"
   },
   {
     "name": "index",
     "path": "/",
     "component": "C:\\\\projects\\\\prueba\\\\test-tecnico\\\\frontend\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_4a8ee0ce"
   }
 ]
