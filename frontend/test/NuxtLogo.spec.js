@@ -7,3 +7,12 @@ describe('NuxtLogo', () => {
     expect(wrapper.vm).toBeTruthy()
   })
 })
+
+
+describe('GET /', () => {
+  test('Route / exits and render HTML', async () => {
+    const { html } = await nuxt.server.renderRoute('/', {})
+
+    expect(html).toContain('Vuetify')
+  })
+})
