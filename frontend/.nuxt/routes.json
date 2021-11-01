@@ -3,21 +3,18 @@
     "name": "inspire",
     "path": "/inspire",
     "component": "C:\\\\projects\\\\prueba\\\\test-tecnico\\\\frontend\\\\pages\\\\inspire.vue",
-    "chunkName": "pages/inspire",
-    "_name": "_6285ddd6"
+    "chunkName": "pages/inspire"
   },
   {
     "name": "car-slug",
     "path": "/car/:slug?",
     "component": "C:\\\\projects\\\\prueba\\\\test-tecnico\\\\frontend\\\\pages\\\\car\\\\_slug.vue",
-    "chunkName": "pages/car/_slug",
-    "_name": "_397b196a"
+    "chunkName": "pages/car/_slug"
   },
   {
     "name": "index",
     "path": "/",
     "component": "C:\\\\projects\\\\prueba\\\\test-tecnico\\\\frontend\\\\pages\\\\index.vue",
-    "chunkName": "pages/index",
-    "_name": "_4a8ee0ce"
+    "chunkName": "pages/index"
   }
 ]

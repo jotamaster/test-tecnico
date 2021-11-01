@@ -1,7 +1,17 @@
 <template>
   <v-container>
-    <v-row v-if="cars" no-gutters>
-      <v-col v-for="(car , index) in cars" :key="index+'cars'" class="py-3" order="1">
+    <v-row v-if="currentCars" no-gutters>
+      <v-col cols="12">
+       <search
+        @search="getCarsWithFilter"
+        @getAll="getAllCars"
+        :brands="getBrands"
+        :years="getYears"
+        :car-classes="getCarClasses"
+        ></search>
+      </v-col>
+      <v-divider></v-divider>
+      <v-col v-for="(car , index) in currentCars" :key="index+'cars'" class="py-3" order="1"  >
         <card-car :car="car"></card-car>
       </v-col>
     </v-row>
@@ -12,23 +22,70 @@
 </template>
 <script>
 import CardCar from '@/components/CardCar.vue'
+import Seacrch from '@/components/Search.vue'
 
 export default {
   components: {
-   CardCar
+   CardCar,
+   Seacrch
   },
   data() {
     return {
-      cars:null
+      currentCars:null,
+      allCars:null
+    }
+  },
+  computed:{
+    getBrands(){
+      if(!this.allCars) return []
+      let brands= [];
+      this.allCars.map( (car) => {
+        if(!brands.includes(car.brand))
+        brands.push(car.brand);
+      });
+      return brands;
+    },
+    getYears(){
+      if(!this.allCars) return []
+      let years= [];
+      this.allCars.map( (car) => {
+        if(!years.includes(car.year))
+        years.push(car.year);
+      });
+      return years.sort();
+    },
+    getCarClasses(){
+      if(!this.allCars) return []
+      let carClasses= [];
+      this.allCars.map( (car) => {
+        if(!carClasses.includes(car.carClass));
+        carClasses.push(car.carClass)
+      });
+      return carClasses;
     }
   },
   methods: {
+    getCarsWithFilter(carClasses, brands, years){
+      let data = {
+        brands,
+        carClasses,
+        years
+      }
+      this.$axios.post('/api/cars/filters',data)
+      .then( (response) => {
+        this.currentCars = response.data;
+      })
+    },
+    getAllCars(){
+      this.currentCars = this.allCars;
+    },
   },
   async fetch() {
 
     try{
       const cars = await this.$axios.$get('/api/cars');
-      this.cars = cars;
+      this.currentCars = cars;
+      this.allCars = cars;
     }
     catch(error){
       console.log("error al reliazar la peticion al servidor");
