@@ -1,7 +1,7 @@
 <template>
-  <v-app :key="componentKey" id="inspire">
+  <v-app id="inspire">
     <v-navigation-drawer
-    v-if="isLogged"
+      v-if="isLogged"
       v-model="drawer"
       app
     >
@@ -52,12 +52,13 @@
 
     </v-navigation-drawer>
 
-    <v-app-bar app>
+    <v-app-bar app >
       <v-app-bar-nav-icon v-if="isLogged" @click="drawer = !drawer"></v-app-bar-nav-icon>
-
-      <v-toolbar-title v-if="ifIndex" >Cars</v-toolbar-title>
-      <nuxt-link v-else to="/">  Volver al Inicio</nuxt-link>
+      <v-toolbar-title v-if="ifIndex" >Cars </v-toolbar-title>
+      <v-toolbar-title v-if="ifIndex && !isLogged" > <nuxt-link to="/auth/login">Login</nuxt-link> </v-toolbar-title>
+      <nuxt-link v-if="!ifIndex" to="/">  Volver al Inicio</nuxt-link>
     </v-app-bar>
+
 
     <v-main>
       <nuxt></nuxt>
@@ -70,7 +71,6 @@
     data() {
       return {
         drawer: false,
-        componentKey:1,
         cars:[
           {
 
@@ -97,9 +97,11 @@
     },
     mounted() {
       if(process.client){
-        if(localStorage.user){
-          this.$store.commit('set_user',JSON.parse(localStorage.user))
 
+        if(localStorage.user){
+
+          this.$store.commit('set_user',JSON.parse(localStorage.user))
+           console.log(this.$store.getters['isAuthenticated'])
         }
       }
     },
@@ -110,5 +112,9 @@
   .theme--dark.v-application {
     background: white !important;
     color: black;
+}
+
+.v-toolbar__content, .v-toolbar__extension {
+    justify-content: space-between;
 }
 </style>

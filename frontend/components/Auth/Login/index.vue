@@ -66,9 +66,8 @@ export default {
 
         }).catch( (error) => {
 
-        }).finally(()=>{
-          console.log('hola')
-          this.$router.push('/');
+        }).finally( ()=> {
+          location.reload()
         })
 
     }
