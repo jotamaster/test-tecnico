@@ -29,6 +29,34 @@ export const findOneCar = async (req, res) => {
     res.json(car);
 }
 
+
+export const findAllCarsByFilters = async (req, res) => {
+
+    
+    let filters = {};
+    if(req.body.brands.length){
+        filters['brand'] = {
+            "$in" :  req.body.brands
+        }
+    }
+
+    if(req.body.years.length){
+        filters['year'] = {
+            "$in" :  req.body.years
+        }
+    }
+
+    if(req.body.carClasses.length){
+        filters['carClass'] = {
+            "$in" :  req.body.carClasses
+        }
+    }
+
+    const car = await  Car.find(filters);
+    res.json(car);
+
+}
+
 export const findOneCarBySlug = async (req, res) => {
     const car = await  Car.findOne({slug: req.params.slug});
     res.json(car);

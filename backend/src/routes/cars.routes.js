@@ -14,6 +14,8 @@ router.get('/slug/:slug', CarController.findOneCarBySlug);
 
 router.post('/', CarController.storeCar );
 
+router.post('/filters', CarController.findAllCarsByFilters );
+
 router.delete('/:id', CarController.deleteCar);
 
 
