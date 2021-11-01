@@ -49,7 +49,7 @@ export const login = async (req, res) => {
 
     res.header('auth-token', token).json({
     error: null,
-    data: { token },
+    data: { token, name: user.name },
         message: 'Bienvenido'
     })
 }

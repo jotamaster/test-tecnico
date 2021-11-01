@@ -8,7 +8,7 @@ Content-Type: application/json
 
 {
     "description":"auto semi nuevo bien cuidado",
-    "owner":"Jorge Bustamante",
+    "owner":"Jorge Bustamante Dos",
     "brand": "Changan",
     "year":"2015",
     "carClass":"sedan",
@@ -32,7 +32,7 @@ POST  http://localhost:3400/api/cars/filters
 Content-Type: application/json
 
 { 
-    "branwds":[ "Renault" , "Mazda"],
+    "brands":[ "Renault" , "Mazda"],
     "carClasses":["jeep"],
     "years":[]
 }

@@ -1,4 +1,5 @@
 import Car from '../models/Car';
+import User from '../models/User';
 import slugify from 'slugify';
 
 const fakeCars = [
@@ -124,4 +125,32 @@ export const carSeeder =  async (req, res) => {
     res.json({
         message: "user seeds executed successfully"
     });
+};
+
+export const userSeeder =  async (req, res) => {
+    const isEmailExist = await User.findOne({ email: req.body.email });
+    if (isEmailExist) {
+        return res.status(400).json(
+            {error: 'Email ya registrado'}
+        )
+    }
+
+    const salt = await bcrypt.genSalt(10);
+    const password = await bcrypt.hash(req.body.password, salt);
+
+    const user = new User({
+        name: req.body.name,
+        email: req.body.email,
+        password
+    });
+
+    try {
+        const savedUser = await user.save();
+        res.json({
+            error: null,
+            data: savedUser
+        })
+    } catch (error) {
+        res.status(400).json({error});
+    }
 };
