@@ -4,6 +4,7 @@ import cors from 'cors';
 
 import CarsRoutes from './routes/cars.routes';
 import SeederRoutes from './routes/seeder.routes';
+import AuthRoutes from './routes/auth.routes';
 
 
 const corsOptions = {
@@ -28,5 +29,6 @@ app.get('/',(req, res )=>{
 
 app.use('/api/cars',CarsRoutes);
 app.use('/api/seeders',SeederRoutes);
+app.use('/api/auth',AuthRoutes);
 
 export default app;

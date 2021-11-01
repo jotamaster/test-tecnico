@@ -2,6 +2,8 @@ import { Router } from 'express';
 
 import * as CarController from '../controllers/car.controller';
 
+import verifyToken from '../services/verifyToken';
+
 
 const router = Router();
 
@@ -12,7 +14,7 @@ router.get('/:id', CarController.findOneCar);
 
 router.get('/slug/:slug', CarController.findOneCarBySlug);
 
-router.post('/', CarController.storeCar );
+router.post('/',verifyToken, CarController.storeCar );
 
 router.post('/filters', CarController.findAllCarsByFilters );
 

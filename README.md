@@ -24,6 +24,7 @@ El repositorio cuenta con una carpeta para el backend y otra para el frontend, c
 2. mongoose 5.03
 3. dot-env ^10.0.0
 3. cors ^2.8.5"
+4. slugify ^1.6.1
 
 ### Lista de dependencias de desarrollo:
 
@@ -32,6 +33,9 @@ El repositorio cuenta con una carpeta para el backend y otra para el frontend, c
 3. @babel/core ^7.16.0
 4. @babel/node ^7.16.0
 5. @babel/preset-env ^7.16.0
+6.  @shelf/jest-mongodb ^2.1.0
+7. jest ^27.3.1
+8. supertest ^6.1.6
 
 ## Instalación:
 ### Primer paso es clonar el proyecto
@@ -54,8 +58,13 @@ Modo develop
 npm start
 ```
 
+### Arrancar los test 
+```
+npm run test
+```
 
-## Backend 
+
+## Frontend 
 
 ### Técnologias:
 
