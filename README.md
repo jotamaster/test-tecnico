@@ -16,7 +16,7 @@ El repositorio cuenta con una carpeta para el backend y otra para el frontend, c
 
 1. Lenguaje de programación JS usando NodeJS v16.10.0
 2. Base de datos no relacional MongoDB 7.24.0.
-3. controlador de versiones GIT 2.29.2
+3. Controlador de versiones GIT 2.29.2
 
 ### Lista de dependencias:
 
@@ -48,7 +48,7 @@ git clone https://github.com/jotamaster/test-tecnico.git
 npm install
 ```
 
-### Copia el archivo .env.example y nombralo .env  y configura las variables de entorno
+### Copia el archivo .env.example, nómbralo .env  y configura las variables de entorno
 ```
 cp .env.example .env
 ```
@@ -131,9 +131,9 @@ GET: "/api/seeders/user", crea un usuario de pruebas.
 
 #  Frontend 
 
-## Técnologias:
+## Tecnologías:
 
-1. <b>NuxtJS</b> <br> para el lado del frontend  escogí NuxtJS  que es un framework basado en VueJS. Nuxt esta inspirado de NextJS, que tiene similar propósito y está basado en ReactJS. Y que facilian la creación de aplicaciones SSR.
+1. <b>NuxtJS</b> <br> Para el lado del frontend  escogí NuxtJS  que es un framework basado en VueJS. Nuxt esta inspirado de NextJS, que tiene similar propósito y está basado en ReactJS y que facilian la creación de aplicaciones SSR.
 
 ### Lista de dependencias:
 
@@ -184,7 +184,21 @@ Una vez la aplicación construida se puede usar el comando `start` y podrá ver 
 ```
 npm run start
 ```
- 
+
+# Funcionalidades
+
+1. <b>Listar vehículos</b> <br> En la página principal de la aplicación se cargan los vehículos en formato de tarjetas, detallando el dueño, marca, modelo, año, categoria e imagen principal del vehículo.
+
+2. <b>Búsqueda de vehículos</b> <br> Cuenta con un componente de búsqueda para poder filtrar los vehículos por marca, categoria y año.
+
+
+3. <b>Detalle del vehículo</b> <br> Página principal de un vehículo que detalla a fondo todas sus caracteristicas.
+
+4. <b>Recomendación de vehículos</b> <br> La aplicación va recopilando información de navegación del usuario cada vez que un usuario ve la página de detalle de un vehículo el sistema guarda en el localStorage del navegador el tipo de vehiculo y con base en eso calcular qué tipo de vehículos ve con mayor frecuencia para después ordenar los vehículos según el tipo de vehículo con mayor ranking de visitas.
+
+5. <b>Login</b> <br> Página para iniciar sesión en el sistema que viene con valores predefinidos para facilitar los test.
+
+5. <b>Dashboard</b> <br> Página en la cual se muestra el formulario de creación de un vehículo.
 
 
 
